@@ -38,8 +38,8 @@ let args = messageArray.slice(1);
   let IGTChannel = message.guild.channels.find(`name`, "in-game-times");
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
-  if(cmd === `${prefix}amibad`){
-    return message.channel.send("If you're BestPD, yes.");
+  if(cmd === `${prefix}discord`){
+    return message.channel.send("If your friends are interested in joining the Discord, send them this invite! discord.valencemc.us");
   }
   if(cmd === `!submit`){
       if(message.member.roles.find('name','Mentee')) {
@@ -196,4 +196,4 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
 // }
 //
 
-bot.login(process.env.token);
+bot.login(botconfig.token);
