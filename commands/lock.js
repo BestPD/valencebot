@@ -1,6 +1,6 @@
 const ms = require('ms');
 exports.run = (client, message, args) => {
-  if(!message.member.roles.find('name', 'Owner') || !message.member.roles.find('name', 'Admin'))  return message.reply("Sorry, you don't have permission to!")
+  if(!message.member.roles.find('name', 'Owner') return message.reply("Sorry, you don't have permission to!")
   if (!client.lockit) client.lockit = [];
   let time = args.join(' ');
   let validUnlocks = ['release', 'unlock'];
