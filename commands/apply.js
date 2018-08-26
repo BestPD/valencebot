@@ -38,3 +38,9 @@ module.exports.run = async (bot, message, args, channel, setParent, guild) =>{
 
         }
       }
+
+      exports.help = {
+        name: 'apply',
+        description: 'This will lock a channel down for the set duration, be it in hours, minutes or seconds.',
+        usage: 'lockdown <duration>'
+      };
