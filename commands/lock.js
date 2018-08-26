@@ -1,5 +1,6 @@
 const ms = require('ms');
 exports.run = (client, message, args) => {
+  if(!message.member.roles.find('name', 'Owner') || !message.member.roles.find('name', 'Admin'))  return message.reply("Sorry, you don't have permission to!")
   if (!client.lockit) client.lockit = [];
   let time = args.join(' ');
   let validUnlocks = ['release', 'unlock'];
@@ -42,7 +43,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'lockdown',
+  name: 'lock',
   description: 'This will lock a channel down for the set duration, be it in hours, minutes or seconds.',
   usage: 'lockdown <duration>'
 };
