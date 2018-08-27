@@ -24,10 +24,6 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity("on play.valencemc.us", {type: "PLAYING"});
 });
-client.on("guildMemberAdd", function(member) {
-      let role = member.channel.roles.find(r => r.name === "Member");
-      member.addRole(role).catch(console.error);
-  });
 bot.on("message", async message => {
   if(message.author.bot) return;
 if(message.channel.type === "dm") return;
