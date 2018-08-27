@@ -23,7 +23,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity("on Valence", {type: "PLAYING"});
+  bot.user.setActivity("on play.valencemc.us", {type: "PLAYING"});
 });
 
 bot.on("message", async message => {
@@ -70,7 +70,10 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
     };
 });
 
-
+client.on("guildMemberAdd", function(member) {
+    let role = member.channel.roles.find(r => r.name === "Member");
+    member.addRole(role).catch(console.error);
+});
 
 // if(cmd === `${prefix}kick`){
 //
