@@ -12,7 +12,10 @@ fs.readdir("./commands/", (err, files) => {
     console.log("Couldn't find commands.");
     return;
   }
-
+  client.on("guildMemberAdd", function(member) {
+      let role = member.channel.roles.find(r => r.name === "Member");
+      member.addRole(role).catch(console.error);
+  });
   jsfile.forEach((f, i) =>{
   let props = require(`./commands/${f}`);
   console.log(`${f} loaded`);
@@ -68,11 +71,6 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         return message.channel.send(no_perms)
     }
     };
-});
-
-client.on("guildMemberAdd", function(member) {
-    let role = member.channel.roles.find(r => r.name === "Member");
-    member.addRole(role).catch(console.error);
 });
 
 // if(cmd === `${prefix}kick`){
