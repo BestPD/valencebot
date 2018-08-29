@@ -22,7 +22,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity("on play.valencemc.us", {type: "PLAYING"});
+  bot.user.setActivity("on Valence", {type: "PLAYING"});
 });
 bot.on("message", async message => {
   if(message.author.bot) return;
