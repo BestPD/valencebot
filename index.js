@@ -70,9 +70,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         .addField("What Went Wrong?", "You don't have permission to use this command!")
         return message.channel.send(no_perms)
     }
-    };
-});
-if(cmd === "!support") {
+    if(cmd === "!support") {
     message.delete();
     message.guild.createChannel(`${message.author.username}-support`, 'text',[{
      type: 'Member',
@@ -80,7 +78,9 @@ if(cmd === "!support") {
      allow: ['SEND_MESSAGES', 'VIEW_CHANNEL'],
      deny: ['MENTION_EVERYONE']
     }])
-    .catch(console.error);
+    };
+});
+
   }
 // if(cmd === `${prefix}kick`){
 //
