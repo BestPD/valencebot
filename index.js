@@ -71,16 +71,16 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         return message.channel.send(no_perms)
     }
     if(cmd === "!support") {
-    message.delete();
-    message.guild.createChannel(`${message.author.username}-support`, 'text',[{
-     type: 'Member',
-     id: message.author.id,
-     allow: ['SEND_MESSAGES', 'VIEW_CHANNEL'],
-     deny: ['MENTION_EVERYONE']
-    }])
+        message.delete();
+        message.guild.createChannel(`${message.author.username}-support`, 'text',[{
+         type: 'member',
+         id: message.author.id,
+         allow: ['SEND_MESSAGES', 'VIEW_CHANNEL'],
+         deny: ['MENTION_EVERYONE']
+        }])
+        .catch(console.error);
     };
 });
-
   }
 // if(cmd === `${prefix}kick`){
 //
