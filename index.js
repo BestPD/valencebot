@@ -80,7 +80,6 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         }])
         .catch(console.error);
     };
-});
   }
 // if(cmd === `${prefix}kick`){
 //
