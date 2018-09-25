@@ -79,6 +79,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
          deny: ['MENTION_EVERYONE']
         }])
         .catch(console.error);
+      )
     };
   }
 // if(cmd === `${prefix}kick`){
