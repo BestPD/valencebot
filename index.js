@@ -75,7 +75,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(cmd === "!support") {
     message.delete();
     message.guild.createChannel(`${message.author.username}-support`, 'text',[{
-     type: 'member',
+     type: 'Member',
      id: message.author.id,
      allow: ['SEND_MESSAGES', 'VIEW_CHANNEL'],
      deny: ['MENTION_EVERYONE']
