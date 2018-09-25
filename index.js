@@ -70,7 +70,6 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
     };
 });
 
-
 // if(cmd === `${prefix}kick`){
 //
 // let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
