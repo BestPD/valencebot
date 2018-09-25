@@ -69,7 +69,6 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         .addField("Format", "!submit <IGT>")
         .addField("What Went Wrong?", "You don't have permission to use this command!")
         return message.channel.send(no_perms)
-    }
     };
   }
 // if(cmd === `${prefix}kick`){
