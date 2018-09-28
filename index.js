@@ -46,7 +46,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         let no_IGT = new Discord.RichEmbed()
         .setTitle("Purchase - Error")
         .setColor("#FF0000")
-        .addField("Format", "!submit <IGT>")
+        .addField("Format", "!purchase <In Game Name>, <item>")
         .addField("What Happened?", "You didn't enter what was purchased!")
         if(!igt) return message.channel.send(no_IGT);
         let correct_IGT = new Discord.RichEmbed()
