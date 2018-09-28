@@ -55,9 +55,10 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         .setDescription("Purchase logged! Expect it to be applied within 6-12 hours!")
         message.channel.send(correct_IGT);
         let IGT_final = new Discord.RichEmbed()
-        .setTitle("Current IGT - " + message.author.username + "#" + message.author.discriminator)
+        .setTitle("Purchase Information - " + message.author.username + "#" + message.author.discriminator)
         .setColor("#00FFFF")
-        .addField("IGT", igt)
+        .addField("Purchase", igt)
+        .addField("_ _", "Reminder to add a :white_check_mark: to each response once you handle it!")
         IGTChannel.send(IGT_final);
       } else {
         let no_perms = new Discord.RichEmbed()
