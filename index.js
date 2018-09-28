@@ -39,20 +39,20 @@ let args = messageArray.slice(1);
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   if(cmd === `${prefix}discord`){
-    return message.channel.send("If your friends are interested in joining the Discord, send them this invite! discord.valencemc.us");
+    return message.channel.send("If your friends are interested in joining the Discord, send them this invite! http://discord.valencemc.us");
   }
-  if(cmd === `!submit`){
-      if(message.member.roles.find('name','Mentee')) {
+  if(cmd === `!purchase`){
+      if(message.member.roles.find('name','Member')) {
         let no_IGT = new Discord.RichEmbed()
-        .setTitle("IGT - Error")
+        .setTitle("Purchase - Error")
         .setColor("#FF0000")
         .addField("Format", "!submit <IGT>")
-        .addField("What Went Wrong?", "You didn't specify an in-game time!")
+        .addField("What Happened?", "You didn't enter what was purchased!")
         if(!igt) return message.channel.send(no_IGT);
         let correct_IGT = new Discord.RichEmbed()
-        .setTitle("IGT")
+        .setTitle("Purchase")
         .setColor("#228B22")
-        .setDescription("Successfully submitted your IGT!")
+        .setDescription("Purchase logged! Expect it to be applied within 6-12 hours!")
         message.channel.send(correct_IGT);
         let IGT_final = new Discord.RichEmbed()
         .setTitle("Current IGT - " + message.author.username + "#" + message.author.discriminator)
@@ -61,14 +61,15 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         IGTChannel.send(IGT_final);
       } else {
         let no_perms = new Discord.RichEmbed()
-        .setTitle("IGT - Error")
+        .setTitle("Purchase - Error")
         .setColor("#FF0000")
-        .addField("Format", "!submit <IGT>")
+        .addField("Format", "!purchase <Items>")
         .addField("What Went Wrong?", "You don't have permission to use this command!")
         return message.channel.send(no_perms)
     }
     };
 });
+
 
 // if(cmd === `${prefix}kick`){
 //
