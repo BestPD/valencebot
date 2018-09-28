@@ -35,7 +35,7 @@ let cmd = messageArray[0];
 let args = messageArray.slice(1);
   let igt = args.slice(0).join(' ');
   let mentee_role = message.guild.roles.find("name", "test");
-  let IGTChannel = message.guild.channels.find(`name`, "in-game-times");
+  let IGTChannel = message.guild.channels.find(`name`, "purchases");
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
   if(cmd === `${prefix}discord`){
