@@ -64,7 +64,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
         let no_perms = new Discord.RichEmbed()
         .setTitle("Purchase - Error")
         .setColor("#FF0000")
-        .addField("Format", "!purchase <In Game Name> <items>")
+        .addField("Format", "!purchase <In Game Name> , <items>")
         .addField("Example", "!purchase Tacking Alpha rank")
         .addField("What Went Wrong?", "You don't have permission to use this command!")
         return message.channel.send(no_perms)
